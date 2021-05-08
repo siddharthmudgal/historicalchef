@@ -3,7 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from core.models import Event
-from .serializers import EventSerializer, EventSearchSerializer
+from .serializers import EventSerializer
 
 from rest_framework import viewsets
 from .service import selectively_find_events
