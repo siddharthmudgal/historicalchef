@@ -1,14 +1,15 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Event(models.Model):
     """model to represent an event"""
-    createdAt = models.DateTimeField(auto_now_add=True)
-    email = models.CharField(max_length=255, null=False)
-    environment = models.CharField(max_length=255, null=False)
-    component = models.CharField(max_length=255, null=False)
-    message = models.CharField(max_length=255, null=False)
-    dataPayload = models.TextField(null=False)
+    created_at = models.PositiveIntegerField(default=1)
+    email = models.EmailField(default='')
+    environment = models.CharField(max_length=255, default='')
+    component = models.CharField(max_length=255, default='')
+    message = models.CharField(max_length=255, default='')
+    data_payload = models.JSONField()
 
     def __str__(self):
         return self.email
