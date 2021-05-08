@@ -26,5 +26,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Lint
-        run: docker-compose run app sh -c "python manage.py flake8"
+        run: docker-compose run app sh -c "flake8"
 
