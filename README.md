@@ -8,11 +8,6 @@ Challenge task for ChefHero
 4. Integration Tests
 5. Flake tests
 6. Database - postgres
-7. Strategies to improve db access : 
-   1. Atomic transactions
-   2. Indexing
-   3. QuerySet lazy loading
-   4. QuerySet caching
 8. Auto generated ID format :
    1. The auto generated ID is auto increment
    2. Is of type BigAutoField
@@ -120,3 +115,12 @@ Run the following command from the root of the project :
 ## Business logics implementation
 
 All business logics must go in the service module ( currently only present in event module). Similarly moving forward, when new apps are created they must contain a services python folder ( or a services.py ) to implement the business logics.
+
+
+
+## Strategies to improve DB access performance
+
+1. Atomic transactions
+2. Indexing
+3. QuerySet lazy loading
+4. QuerySet caching
