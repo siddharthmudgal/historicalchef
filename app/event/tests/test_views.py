@@ -4,7 +4,7 @@ from django.urls import reverse
 from rest_framework import status
 from core.models import Event
 
-EVENTS_URL = reverse('event:event-findevents')
+EVENTS_URL = reverse('event:event-find')
 
 
 def createEvent(email='diego@chefhero.com',

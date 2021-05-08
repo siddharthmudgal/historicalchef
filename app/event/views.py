@@ -10,11 +10,12 @@ from .service import selectively_find_events
 
 
 class EventViewSet(viewsets.ModelViewSet):
+    """view set for event"""
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
     @action(methods=['POST'], detail=False)
-    def findevents(self, request):
+    def find(self, request):
         """This REST API returns a set of events
         based on the search criteria"""
         event_search = request.data

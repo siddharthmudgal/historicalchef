@@ -9,6 +9,7 @@ from core.models import Event
 
 
 def is_key_valid(data, key):
+    """helper function to verify presence of key"""
     if data.__contains__(key):
         if data[key] is not None:
             if len(data[key]) != 0:
