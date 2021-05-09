@@ -27,6 +27,8 @@ Challenge task for ChefHero
    3. Event model can be edited via UI itself
    4. However, this requires credentials of a super user to be generated
 
+   
+
 2. ```http://localhost:8000/api/events/```
 
    1. Verbs supported : GET / POST
@@ -76,9 +78,13 @@ Challenge task for ChefHero
       }
       ```
 
-
+4. ```http://localhost:8000/api/events/<int:pk>/```
+   1. Verbs Supported : GET
+   2. This API allows retrieval  of event records based on their primary key
+   3. example : ```http://localhost:8000/api/events/1/```
 
 ## How to run the app ?
+
 Run the following command from the root of the project : 
 
 ```docker-compose up```

@@ -5,6 +5,7 @@ from ..services import service as service
 
 
 def create_event(email='diego@chefhero.com',
+                 created_at=1620551815,
                  environment='production',
                  component='orders',
                  message='the buyer # 123456 has placed an order successfully',
@@ -12,6 +13,7 @@ def create_event(email='diego@chefhero.com',
     """helper function to create event"""
     Event.objects.create(
         email=email,
+        created_at=created_at,
         environment=environment,
         component=component,
         message=message,
@@ -108,6 +110,29 @@ class Test(TestCase):
         as expected"""
         searchpayload = {
             'message': 'placed'
+        }
+        data = service.selectively_find_events(searchpayload)
+        self.assertEqual(len(data), 0)
+
+    def test_find_events_valid_time_based_search(self):
+        """verify if the search for events works
+        as expected"""
+        create_event()
+        create_event()
+        create_event()
+        create_event(created_at=123456)
+
+        searchpayload = {
+            'created_at': '09-05-2021'
+        }
+        data = service.selectively_find_events(searchpayload)
+        self.assertEqual(len(data), 3)
+
+    def test_find_events_invalid_time_based_search(self):
+        """verify if the search for events works
+        as expected"""
+        searchpayload = {
+            'created_at': '09-05-2021'
         }
         data = service.selectively_find_events(searchpayload)
         self.assertEqual(len(data), 0)
