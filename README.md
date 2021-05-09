@@ -26,10 +26,15 @@ Challenge task for ChefHero
    2. Here you can view Event model via UI
    3. Event model can be edited via UI itself
    4. However, this requires credentials of a super user to be generated
-
    
+   
+2. ```http://localhost:8000/api/```
 
-2. ```http://localhost:8000/api/events/```
+   1. This is the API root for the exposed REST API's
+   2. You can browse the supported REST API's from this page
+      
+
+3. ```http://localhost:8000/api/events/```
 
    1. Verbs supported : GET / POST
 
@@ -52,7 +57,7 @@ Challenge task for ChefHero
 
          
 
-3. ```http://localhost:8000/api/events/find/```
+4. ```http://localhost:8000/api/search/events/```
 
    1. Verbs supported : POST
 
@@ -78,10 +83,12 @@ Challenge task for ChefHero
       }
       ```
 
-4. ```http://localhost:8000/api/events/<int:pk>/```
-   1. Verbs Supported : GET
-   2. This API allows retrieval  of event records based on their primary key
-   3. example : ```http://localhost:8000/api/events/1/```
+      
+
+   5. ```http://localhost:8000/api/events/<int:pk>/```
+      1. Verbs Supported : GET, DELETE, PUT, PATCH
+      2. This API allows retrieval  of event records based on their primary key
+      3. example : ```http://localhost:8000/api/events/1/```
 
 ## How to run the app ?
 
@@ -107,16 +114,24 @@ Run the following command from the root of the project :
 
 ## Module descriptions
 
-1. app
-   1. is the main django app
-2. core
-   1. Consists of all models & migrations
-3. event
-   1. implementation and declaration of API's related to event ( views.py )
-   2. serialziers related to event ( serializer.py )
-   3. business logics related to event ( service.py )
+1. **app**
 
+   - Is the main django app
 
+2. **core**
+
+   - Consists of all models & migrations
+
+3. **event**
+
+   - This module encloses functionalities related to 'event'
+
+   - **api**
+     - This sub-module covers code related to exposing REST API
+
+   - **Services**
+     - This sub-module consists of all business logics
+       
 
 ## Business logics implementation
 
