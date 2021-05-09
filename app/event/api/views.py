@@ -6,7 +6,7 @@ from core.models import Event
 from .serializers import EventSerializer
 
 from rest_framework import viewsets
-from .service import selectively_find_events
+from ..services import service as service
 
 
 class EventViewSet(viewsets.ModelViewSet):
@@ -19,7 +19,7 @@ class EventViewSet(viewsets.ModelViewSet):
         """This REST API returns a set of events
         based on the search criteria"""
         event_search = request.data
-        events = selectively_find_events(event_search)
+        events = service.selectively_find_events(event_search)
 
         if events is None or len(events) == 0:
             raise Http404

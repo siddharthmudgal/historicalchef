@@ -27,7 +27,7 @@ Challenge task for ChefHero
    3. Event model can be edited via UI itself
    4. However, this requires credentials of a super user to be generated
 
-2. ```http://localhost:8000/events/event/```
+2. ```http://localhost:8000/api/events/```
 
    1. Verbs supported : GET / POST
 
@@ -50,7 +50,7 @@ Challenge task for ChefHero
 
          
 
-3. ```http://localhost:8000/events/event/find/```
+3. ```http://localhost:8000/api/events/find/```
 
    1. Verbs supported : POST
 

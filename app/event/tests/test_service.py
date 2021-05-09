@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from core.models import Event
-import event.service as service
+from ..services import service as service
 
 
 def create_event(email='diego@chefhero.com',
