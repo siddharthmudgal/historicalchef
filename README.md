@@ -23,8 +23,9 @@ Challenge task for ChefHero
 2. CreatedAt is stored as timestamp in the database as requested in the question.
 
    1. However, the search records utilizes a date format in the created at field ( 09-05-2021 )
-   2. Please note that there is a subtle different from the question. In the search criteria the date passed must contain double digits for date and month, as opposed to an example in the question.
-      
+   2. Date format for search : DD-MM-YYYY
+   3. Please note that there is a subtle different from the question. In the search criteria the date passed must contain double digits for date and month, as opposed to an example in the question.
+      1. This is an easy to do conversion if required, I assumed this is not part of the scope of the test.
 
 3. Responsibilities have been split into different layers
 
@@ -48,10 +49,8 @@ Challenge task for ChefHero
 
 4. Readme is populated
    
-
 5. Business logics must be populated inside the **services** sub-module in various modules ( example event -> services )
    
-
 6. DB access performance is improved by using the following strategies : 
 
    1. Atomic transactions
@@ -74,7 +73,6 @@ Challenge task for ChefHero
    2. Here you can view Event model via UI
    3. Event model can be edited via UI itself
    4. However, this requires credentials of a super user to be generated
-   
    
 2. ```http://localhost:8000/api/```
 
@@ -162,6 +160,6 @@ Run the following command from the root of the project :
 
 Run the following command from the root of the project :
 
-```docker-compose run app sh -c "python flake8"```
+```docker-compose run app sh -c "flake8"```
 
 
