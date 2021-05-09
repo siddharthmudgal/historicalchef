@@ -131,7 +131,7 @@ Challenge task for ChefHero
 
       
 
-   5. ```http://localhost:8000/api/events/<int:pk>/```
+5. ```http://localhost:8000/api/events/<int:pk>/```
       1. Verbs Supported : GET, DELETE, PUT, PATCH
       2. This API allows retrieval  of event records based on their primary key
       3. example : ```http://localhost:8000/api/events/1/```
