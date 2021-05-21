@@ -53,10 +53,10 @@ Challenge task for ChefHero
    
 6. DB access performance is improved by using the following strategies : 
 
-   1. Atomic transactions
+   1. Atomic transactions ( only helps in case of transactions that require ACID )
    2. Indexing
    3. QuerySet lazy loading
-   4. QuerySet caching
+   4. QuerySet caching ( multiple query set objects are not created in a single API call, but can be used later if required )
 
 7. Fields validated
 
